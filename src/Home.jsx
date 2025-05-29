@@ -20,7 +20,7 @@ function Home() {
 useEffect(() => {
   async function fetchTonPrice() {
     try {
-      const res = await fetch("https://134.122.71.79:8000/ton_price");
+      const res = await fetch("http://134.122.71.79:8000/ton_price");
       const data = await res.json();
       if (data.price) {
         setTonPrice(data.price);
@@ -50,7 +50,7 @@ const calculateTonPrice = (stars) => {
 
     if (value.length >= 3) {
       try {
-        const response = await fetch("https://134.122.71.79:8000/search", {
+        const response = await fetch("http://134.122.71.79:8000/search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
