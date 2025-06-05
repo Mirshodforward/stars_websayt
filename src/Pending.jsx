@@ -20,7 +20,7 @@ function Pending() {
     // Backendga stars sotib olishni so‘rov yuborish
     async function sendBuyStars() {
         try {
-            const response = await fetch("http://64.226.75.154:8000/buy-stars", {
+            const response = await fetch("https://starstg.uz/buy-stars", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, quantity }),
@@ -53,7 +53,7 @@ function Pending() {
                 return;
             }
             try {
-                const res = await fetch("http://64.226.75.154:8000/check-payment", {
+                const res = await fetch("https://starstg.uz/check-payment", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ comment, amount_in_nano }),
