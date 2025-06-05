@@ -44,7 +44,7 @@ function Payment() {
     const fetchData = async () => {
       if (username && username.length >= 3) {
         try {
-          const res = await fetch("https://starstg.uz/search", {
+          const res = await fetch("https://api.starstg.uz/search", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: username, quantity: "50" }),
@@ -88,7 +88,7 @@ function Payment() {
       const data = { username, quantity, tonAmount };
 
       try {
-        const response = await fetch("https://starstg.uz/generate-payment/", {
+        const response = await fetch("https://api.starstg.uz/generate-payment/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
